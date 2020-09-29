@@ -7,4 +7,4 @@
 3. 쉘(cmd)에서 Dockerfile이 있는 경로로 이동 후 아래 명령어 차례대로 입력
 4. docker build -t bufs .
 5. docker run -it -p 8080:8080 bufs
-6. http://localhost:8080/project/ 로 접속
+6. http://localhost:8080 으로 접속
