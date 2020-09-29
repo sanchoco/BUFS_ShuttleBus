@@ -14,6 +14,7 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 #tomcat settings
 COPY ./srcs/project.war /app/apache-tomcat-9.0.38/webapps/
 COPY ./srcs/server.xml /app/apache-tomcat-9.0.38/conf/
+RUN rm -rf /app/apache-tomcat-9.0.38/webapps/ROOT
 
 #server settings
 ENV	TZ=Asia/Seoul
@@ -26,6 +27,6 @@ ENV CATALINA_HOME /app/apache-tomcat-9.0.38
 
 
 #run
-CMD service mysql start && bash /app/apache-tomcat-9.0.38/bin/catalina.sh start && bash
+CMD service mysql start && /app/apache-tomcat-9.0.38/bin/catalina.sh start && bash
 
 EXPOSE 8080
