@@ -27,8 +27,10 @@ ENV CATALINA_HOME /app/apache-tomcat-9.0.38
 
 #mariadb settings
 COPY ./srcs/50-server.cnf /etc/mysql/mariadb.conf.d/
+COPY ./srcs/base.sql /app/
 
 #run
-CMD service mysql start && /app/apache-tomcat-9.0.38/bin/catalina.sh start && bash
+COPY ./srcs/start.sh /
+CMD sh start.sh && bash
 
 EXPOSE 8080 3306
