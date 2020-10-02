@@ -1,7 +1,9 @@
+-- Create database and table
 CREATE DATABASE goSchool;
 USE goSchool;
 CREATE TABLE shuttle_bufs ( id INT PRIMARY KEY, arrive time);
 
+-- add shuttle_bufs data
 INSERT INTO shuttle_bufs
 VALUES
 (0, '07:55:00'),
@@ -22,6 +24,13 @@ VALUES
 (15, '21:50:00'),
 (16, '22:15:00');
 
+-- Add shuttle_beomeoa data with VIEW
+CREATE VIEW shuttle_beomeosa
+AS
+SELECT id, DATE_ADD(arrive, INTERVAL 6 MINUTE) AS "arrive"
+FROM shuttle_bufs;
+
+-- Create user and Add permission
 CREATE USER 'readOnly'@'%' identified by '1234';
-GRANT ALL PRIVILEGES ON goSchool.* TO 'readOnly'@'%';
+GRANT SELECT ON goSchool.* TO 'readOnly'@'%';
 flush privileges;
