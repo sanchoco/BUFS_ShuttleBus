@@ -16,14 +16,14 @@
    
 **현재시간 이후 가장 가까운 버스 시간 조회**
 ```sql
-select arrive   
-from shuttle_bufs   
+select arrive, curtime() , TIMEDIFF(arrive, curtime())   
+from shuttle_bufs  
 where id in   
 (select id   
-from shuttle_bufs   
-where now() <= arrive   
+from shuttle_bufs
+where curtime() <= arrive
 order by arrive asc)   
-limit 1   
+limit 1;
 ```
 
 **프로젝트 페이지**   
