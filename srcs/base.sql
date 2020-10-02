@@ -1,9 +1,9 @@
--- Create database and table
+-- Create database
 CREATE DATABASE goSchool;
 USE goSchool;
-CREATE TABLE shuttle_bufs ( id INT PRIMARY KEY, arrive time);
 
 -- add shuttle_bufs data
+CREATE TABLE shuttle_bufs ( id INT PRIMARY KEY, arrive time);
 INSERT INTO shuttle_bufs
 VALUES
 (0, '07:55:00'),
