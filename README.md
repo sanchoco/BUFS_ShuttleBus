@@ -18,10 +18,10 @@ mysql 접속 및 확인
 ```sql
 select arrive   
 from shuttle_bufs   
-where arrive in   
-(select arrive   
+where id in   
+(select id   
 from shuttle_bufs   
 where now() < arrive   
 order by arrive asc)   
-LIMIT 1   
+limit 1   
 ```
