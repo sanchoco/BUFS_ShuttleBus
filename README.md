@@ -8,14 +8,13 @@
 4. docker build -t bufs .
 5. docker run -it -p 8080:8080 -p 3306:3306 bufs
 6. http://localhost:8080 으로 접속
-
-mysql 접속
+   
+mysql 접속 및 확인
 - mysql gui 툴(heidi sql)로 접속 가능
 - 호스트: 127.0.0.1 포트: 3306
-- 사용자: readOnly 비밀번호: 1234
-
-현재시간 이후 가장 가까운 버스 시간 조회
-
+- 사용자: readOnly 비밀번호: 1234   
+   
+현재시간 이후 가장 가까운 버스 시간 조회   
 ```sql
 select arrive   
 from shuttle_bufs   
