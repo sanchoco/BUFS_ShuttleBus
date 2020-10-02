@@ -30,6 +30,12 @@ ENV PATH $PATH:$JAVA_HOME/bin
 COPY ./srcs/50-server.cnf /etc/mysql/mariadb.conf.d/
 COPY ./srcs/base.sql /app/
 
+#Language settings
+RUN apt-get install -y locales
+ENV LANGUAGE ko_KR.UTF-8
+ENV LANG ko_KR.UTF-8
+RUN locale-gen ko_KR ko_KR.UTF-8
+
 #run
 COPY ./srcs/start.sh /
 CMD sh start.sh && bash
