@@ -15,11 +15,11 @@ mysql 접속
 - 사용자: readOnly 비밀번호: 1234
 
 현재시간과 가장 가까운 버스시간 조회
-select arrive
-from shuttle_bufs
-where arrive in
-(select arrive
-from shuttle_bufs
-where now() < arrive
-order by arrive asc)
-LIMIT 1
+select arrive   
+from shuttle_bufs   
+where arrive in   
+(select arrive   
+from shuttle_bufs   
+where now() < arrive   
+order by arrive asc)   
+LIMIT 1   
