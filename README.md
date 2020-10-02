@@ -21,7 +21,7 @@ from shuttle_bufs
 where id in   
 (select id   
 from shuttle_bufs   
-where now() < arrive   
+where now() <= arrive   
 order by arrive asc)   
 limit 1   
 ```
