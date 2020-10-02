@@ -16,7 +16,7 @@
    
 **현재시간 이후 가장 가까운 버스 시간 조회**
 ```sql
-select arrive, curtime() , TIMEDIFF(arrive, curtime())   
+select arrive, curtime() as now, DATE_FORMAT(TIMEDIFF(arrive, curtime()), '%k시간 %i분후') as diff
 from shuttle_bufs  
 where id in   
 (select id   
