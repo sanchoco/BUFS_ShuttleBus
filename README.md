@@ -13,3 +13,13 @@ mysql 접속
 - mysql gui 툴(heidi sql)로 접속 가능
 - 호스트: 127.0.0.1 포트: 3306
 - 사용자: readOnly 비밀번호: 1234
+
+현재시간과 가장 가까운 버스시간 조회
+select arrive
+from shuttle_bufs
+where arrive in
+(select arrive
+from shuttle_bufs
+where now() < arrive
+order by arrive asc)
+LIMIT 1
