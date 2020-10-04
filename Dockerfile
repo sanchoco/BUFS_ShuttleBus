@@ -38,6 +38,7 @@ RUN locale-gen ko_KR ko_KR.UTF-8
 
 #run
 COPY ./srcs/start.sh /
+RUN sed -i -e 's/\r$//' start.sh
 CMD sh start.sh && bash
 
 EXPOSE 8080 3306
