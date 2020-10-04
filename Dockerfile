@@ -41,4 +41,4 @@ COPY ./srcs/start.sh /
 RUN sed -i -e 's/\r$//' start.sh
 CMD sh start.sh && bash
 
-EXPOSE 8080 3306
+EXPOSE 80 3306
