@@ -12,19 +12,22 @@ RUN wget https://downloads.mariadb.com/Connectors/java/connector-java-2.6.2/mari
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 
 #tomcat settings
-COPY ./srcs/project.war /app/apache-tomcat-9.0.38/webapps/
-COPY ./srcs/server.xml /app/apache-tomcat-9.0.38/conf/
-RUN rm -rf /app/apache-tomcat-9.0.38/webapps/ROOT
+COPY	./srcs/project.war /app/apache-tomcat-9.0.38/webapps/
+COPY	./srcs/server.xml /app/apache-tomcat-9.0.38/conf/
+RUN		rm -rf /app/apache-tomcat-9.0.38/webapps/ROOT
 
 #server settings
-ENV	TZ=Asia/Seoul
-RUN echo set encoding=utf-8 >> /etc/vim/vimrc
-RUN echo set fileencodings=utf-8,cp949 >> /etc/vim/vimrc
-ENV JAVA_HOME /app/java-se-8u41-ri
-ENV CATALINA_HOME /app/apache-tomcat-9.0.38
-ENV PATH $PATH:$JAVA_HOME/bin
-#	RUN echo "export JAVA_HOME=/app/java-se-8u41-ri" >> ~/.bashrc
-#	RUN echo "export CATALINA_HOME=/app/apache-tomcat-9.0.38" >> ~/.bashrc
+ENV		TZ=Asia/Seoul
+RUN		echo set encoding=utf-8 >> /etc/vim/vimrc
+RUN		echo set fileencodings=utf-8,cp949 >> /etc/vim/vimrc
+ENV		JAVA_HOME /app/java-se-8u41-ri
+ENV		CATALINA_HOME /app/apache-tomcat-9.0.38
+ENV		PATH $PATH:$JAVA_HOME/bin
+#RUN	echo "export JAVA_HOME=/app/java-se-8u41-ri" >> ~/.bashrc
+#RUN	echo "export CATALINA_HOME=/app/apache-tomcat-9.0.38" >> ~/.bashrc
+COPY	./srcs/tomcat /etc/init.d/
+RUN		chmod 755 /etc/init.d/tomcat
+RUN		update-rc.d tomcat defaults
 
 #mariadb settings
 COPY ./srcs/50-server.cnf /etc/mysql/mariadb.conf.d/
