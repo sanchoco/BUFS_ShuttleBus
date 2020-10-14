@@ -17,14 +17,7 @@
 **현재시간 이후 가장 가까운 버스 시간 조회**
 ```sql
 use goSchool;
-select arrive, curtime() as now, DATE_FORMAT(TIMEDIFF(arrive, curtime()), '%k시간 %i분후') as diff
-from shuttle_bufs  
-where id in   
-(select id   
-from shuttle_bufs
-where curtime() <= arrive
-order by arrive asc)   
-limit 1;
+select arrive, curtime() as now, DATE_FORMAT(TIMEDIFF(arrive, curtime()), '%k') as hour, DATE_FORMAT(TIMEDIFF(arrive, curtime()), '%i') as minute from shuttle_bufs where id in (select id from shuttle_bufs where curtime() <= arrive order by arrive asc) limit 1;
 ```
 
 **프로젝트 페이지**   
