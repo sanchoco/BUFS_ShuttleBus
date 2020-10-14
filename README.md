@@ -1,4 +1,4 @@
-# BUFS_ShuttleBus(학교가자)
+# BUFS_ShuttleBus(학교가자) - 진행 중
 
 
 **실행방법**
