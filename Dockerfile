@@ -44,8 +44,11 @@ RUN locale-gen ko_KR ko_KR.UTF-8
 
 #api connect setting
 RUN mkdir /app/api
-COPY ./srcs/api.sh /app/api/
 COPY ./srcs/ApiExplorer.java /app/api/
+COPY ./srcs/api_sync.sh /app/api/
+RUN chmod 755 /app/api/api_sync.sh
+
+#crontab settings
 
 #run
 COPY ./srcs/start.sh /
