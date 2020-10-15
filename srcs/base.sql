@@ -91,7 +91,44 @@ VALUES
 (2, '19:10:00'),
 (3, '23:10:00');
 
--- city_301 table !Don't Touch!
+-- add town_bufs_namsan_holiday data
+CREATE TABLE town_bufs_namsan_holiday (id INT PRIMARY KEY, arrive time);
+INSERT INTO town_bufs_namsan_holiday
+VALUES
+(0, '07:55:00'),
+(1, '14:13:00'),
+(2, '18:13:00'),
+(3, '23:13:00');
+
+-- add town_namsan_bufs_holiday data
+CREATE TABLE town_namsan_bufs_holiday  (id INT PRIMARY KEY, arrive time);
+INSERT INTO town_namsan_bufs_holiday
+VALUES
+(0, '09:55:00'),
+(1, '13:55:00'),
+(2, '20:55:00'),
+(3, '23:20:00');
+
+-- add town_bufs_guseo data
+CREATE TABLE town_bufs_guseo_holiday (id INT PRIMARY KEY, arrive time);
+INSERT INTO town_bufs_guseo_holiday
+VALUES
+(0, '10:10:00'),
+(1, '14:10:00'),
+(2, '19:10:00'),
+(3, '23:10:00');
+
+-- add town_guseo_bufs data
+CREATE TABLE town_guseo_bufs_holiday (id INT PRIMARY KEY, arrive time);
+INSERT INTO town_guseo_bufs_holiday
+VALUES
+(0, '10:10:00'),
+(1, '14:10:00'),
+(2, '19:10:00'),
+(3, '23:10:00');
+
+
+-- city_301 table !Don't Touch! 10=guseo, 62=nopo
 CREATE TABLE city_301(idx INT PRIMARY KEY, min1 INT, min2 INT);
 INSERT INTO city_301
 VALUES
