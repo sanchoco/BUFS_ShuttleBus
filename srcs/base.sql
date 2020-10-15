@@ -37,7 +37,18 @@ AS
 SELECT id, DATE_ADD(arrive, INTERVAL 6 MINUTE) AS "arrive"
 FROM shuttle_bufs;
 
+-- city_301 table
+CREATE TABLE city_301(idx INT PRIMARY KEY, min1 INT, min2 INT);
+INSERT INTO city_301
+VALUES
+(10, NULL, NULL),
+(62, NULL, NULL);
+
 -- Create user and Add permission
 CREATE USER 'readOnly'@'%' identified by '1234';
 GRANT SELECT ON goSchool.* TO 'readOnly'@'%';
+flush privileges;
+
+CREATE USER 'apiUpdate'@'%' identified by '1234';
+GRANT ALL PRIVILEGES ON goSchool.city_301 TO 'apiUpdate'@'%';
 flush privileges;
