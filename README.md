@@ -1,4 +1,4 @@
-# BUFS_ShuttleBus(학교가자)
+# BUFS_ShuttleBus(학교가자) - 진행 중
 
 
 **실행방법**
@@ -10,21 +10,14 @@
 6. http://localhost 으로 접속
    
 **mysql 접속 및 확인**
-- mysql gui 툴(heidi sql)로 접속 가능
+- MYSQL GUI 툴(heidiSQL, MYSQL Workbench 등)로 접속 가능
 - 호스트: 127.0.0.1 포트: 3306
 - 사용자: readOnly 비밀번호: 1234   
    
 **현재시간 이후 가장 가까운 버스 시간 조회**
 ```sql
 use goSchool;
-select arrive, curtime() as now, DATE_FORMAT(TIMEDIFF(arrive, curtime()), '%k시간 %i분후') as diff
-from shuttle_bufs  
-where id in   
-(select id   
-from shuttle_bufs
-where curtime() <= arrive
-order by arrive asc)   
-limit 1;
+select arrive, curtime() as now, DATE_FORMAT(TIMEDIFF(arrive, curtime()), '%k') as hour, DATE_FORMAT(TIMEDIFF(arrive, curtime()), '%i') as minute from shuttle_bufs where id in (select id from shuttle_bufs where curtime() <= arrive order by arrive asc) limit 1;
 ```
 
 **프로젝트 페이지**   
