@@ -23,7 +23,7 @@ import org.xml.sax.InputSource;
 
 public class ApiExplorer {
     public static void main(String[] args) throws IOException {
-    	
+
     	//URL
         StringBuilder urlBuilder = new StringBuilder("http://61.43.246.153/openapi-data/service/busanBIMS2/stopArr"); /*URL*/
         urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=" + "%2FxFc4AdSit3wq68y%2Fgc7Vqzqh0EnFrZbuTtUz%2FzOYCDgEDz3fhvIqRGsgO4Ygiuri0sd%2Bwq1bJktZ1lrBYCALg%3D%3D"); /*Service Key*/
@@ -35,7 +35,7 @@ public class ApiExplorer {
         conn.setRequestMethod("GET");
         conn.setRequestProperty("Accept", "application/xml");
         //System.out.println(urlBuilder.toString());
-        
+
         //Connect
         System.out.println("Response code: " + conn.getResponseCode());
         BufferedReader rd = null;
@@ -44,8 +44,8 @@ public class ApiExplorer {
         } else {
             rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
         }
-        
-        //save to sb
+
+		//save to sb
         StringBuilder sb = new StringBuilder();
         String line;
         while ((line = rd.readLine()) != null) {
@@ -53,27 +53,26 @@ public class ApiExplorer {
         }
         rd.close();
         conn.disconnect();
-        
-        
+
+
         //System.out.println(sb);
-        
+
         //parsing
 		try {
-			
+
 	        //DB connect settings
 	        Connection con = null;
-	        PreparedStatement pstmt = null;   
+	        PreparedStatement pstmt = null;
             Class.forName("org.mariadb.jdbc.Driver");
-            
+
             con = DriverManager.getConnection(
                     "jdbc:mariadb://127.0.0.1:3306/goSchool",
                     "apiUpdate",
                     "1234");
-                            
-            pstmt = con.prepareStatement("update city_301 set min1 = NULL, min2 = NULL");
+
+			pstmt = con.prepareStatement("update city_301 set min1 = NULL, min2 = NULL");
             pstmt.executeQuery(); //run query
-			
-			
+
 	        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 	        DocumentBuilder builder;
 			builder = factory.newDocumentBuilder();
@@ -81,7 +80,7 @@ public class ApiExplorer {
 	        Document xml = builder.parse(is);
 	        //add Node
 	        NodeList list = xml.getElementsByTagName("item");
-	        
+
 	        //nopo = 62, guseo = 10;
 	        for (int i = 0; i < 2; i++) {
 	        	int idx = 0, min1 = -1, min2 = -1;
@@ -101,7 +100,7 @@ public class ApiExplorer {
             if(pstmt != null) {
                 pstmt.close(); // 선택사항이지만 호출 추천
             }
-        
+
             if(con != null) {
                 con.close(); // 필수 사항
             }
@@ -111,13 +110,8 @@ public class ApiExplorer {
            String time1 = format1.format(time);
 	       System.out.println("Success! " + time1);
 
-	        
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-        
-        
-        
     }
 }
