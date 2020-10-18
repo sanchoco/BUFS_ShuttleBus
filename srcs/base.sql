@@ -242,6 +242,9 @@ VALUES
 (10, NULL, NULL),
 (62, NULL, NULL);
 
+-- IP_LOG TABLE. Don't Touch This!
+CREATE TABLE log (ip CHAR(20), date date, time time);
+
 -- Create user and Add permission
 CREATE USER 'readOnly'@'%' identified by '1234';
 GRANT SELECT ON goSchool.* TO 'readOnly'@'%';
@@ -249,4 +252,8 @@ flush privileges;
 
 CREATE USER 'apiUpdate'@'%' identified by '1234';
 GRANT ALL PRIVILEGES ON goSchool.city_301 TO 'apiUpdate'@'%';
+flush privileges;
+
+CREATE USER 'logWrite'@'%' identified by '1234';
+GRANT ALL PRIVILEGES ON goSchool.log TO 'logWrite'@'%';
 flush privileges;
