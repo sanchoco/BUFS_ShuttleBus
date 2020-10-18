@@ -1,5 +1,7 @@
 # BUFS_ShuttleBus(학교가자) - 진행 중
 
+**사이트**
+- [http://bufsbus.online/](http://bufsbus.online/)
 
 **실행방법**
 1. 소스 파일 다운로드(또는 클론)
