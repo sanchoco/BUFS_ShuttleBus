@@ -15,3 +15,11 @@ java -cp /app/api:/app/java-se-8u41-ri/lib/mariadb-java-client-2.7.0.jar Holiday
 echo "* * * * * /app/api/api_sync.sh\n0,1 0 1 1,6 * /app/java-se-8u41-ri/bin/java -cp /app/api:/app/java-se-8u41-ri/lib/mariadb-java-client-2.7.0.jar HolidayApi >> /app/api/log.txt" | crontab
 service cron restart
 echo "--------------Finish---------------"
+
+#security
+rm -rf /app/apache-tomcat-9.0.38/webapps/examples
+rm -rf /app/apache-tomcat-9.0.38/webapps/manager
+rm -rf /app/apache-tomcat-9.0.38/webapps/docs
+rm -rf /app/apache-tomcat-9.0.38/webapps/host-manager
+chmod 750 /app/apache-tomcat-9.0.38/webapps
+rm -f /app/base.sql
