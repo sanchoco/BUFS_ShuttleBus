@@ -44,7 +44,8 @@ RUN locale-gen ko_KR ko_KR.UTF-8
 
 #api connect setting
 RUN mkdir /app/api
-COPY ./srcs/ApiExplorer.java /app/api/
+COPY ./srcs/City301Api.java /app/api/
+COPY ./srcs/HolidayApi.java /app/api/
 COPY ./srcs/api_sync.sh /app/api/
 RUN chmod 755 /app/api/api_sync.sh
 

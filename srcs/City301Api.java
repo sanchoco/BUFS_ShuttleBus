@@ -21,7 +21,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 
-public class ApiExplorer {
+public class City301Api {
     public static void main(String[] args) throws IOException {
 
     	//URL

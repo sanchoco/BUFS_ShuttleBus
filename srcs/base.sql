@@ -245,13 +245,16 @@ VALUES
 -- IP_LOG TABLE. Don't Touch This!
 CREATE TABLE log (ip CHAR(20), date date, time time);
 
+-- holiday TABLE
+CREATE TABLE holiday (dateName char(50), locdate date PRIMARY KEY);
+
 -- Create user and Add permission
 CREATE USER 'readOnly'@'%' identified by '1234';
 GRANT SELECT ON goSchool.* TO 'readOnly'@'%';
 flush privileges;
 
 CREATE USER 'apiUpdate'@'%' identified by '1234';
-GRANT ALL PRIVILEGES ON goSchool.city_301 TO 'apiUpdate'@'%';
+GRANT ALL PRIVILEGES ON goSchool.* TO 'apiUpdate'@'%';
 flush privileges;
 
 CREATE USER 'logWrite'@'%' identified by '1234';
