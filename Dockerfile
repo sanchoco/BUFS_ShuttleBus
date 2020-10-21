@@ -15,6 +15,7 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 COPY ./srcs/project.war /app/apache-tomcat-9.0.38/webapps/
 COPY ./srcs/server.xml /app/apache-tomcat-9.0.38/conf/
 COPY ./srcs/web.xml /app/apache-tomcat-9.0.38/conf/
+COPY ./srcs/context.xml /app/apache-tomcat-9.0.38/conf/
 RUN rm -rf /app/apache-tomcat-9.0.38/webapps/ROOT
 COPY ./srcs/tomcat /etc/init.d/
 RUN sed -i -e 's/\r$//' /etc/init.d/tomcat
