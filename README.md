@@ -10,3 +10,6 @@
 4. docker build -t bufs .
 5. docker run -it -p 80:80 -p 3306:3306 bufs
 6. http://localhost 으로 접속
+
+**프로젝트 페이지**
+- https://www.notion.so/7481f4094a8e41a6ae36a550ebdf2bfb
