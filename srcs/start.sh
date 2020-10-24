@@ -1,8 +1,17 @@
 echo "-------| Server Setting... |-------"
 service mysql start
 sleep 3
-mysql -u root < /app/base.sql
-sleep 1
+mysql -u root < /app/database/base.sql
+mysql -u root < /app/database/shuttle_bufs.sql
+mysql -u root < /app/database/town_bufs_guseo.sql
+mysql -u root < /app/database/town_guseo_bufs.sql
+mysql -u root < /app/database/town_bufs_namsan.sql
+mysql -u root < /app/database/town_namsan_bufs.sql
+mysql -u root < /app/database/town_bufs_guseo_holiday.sql
+mysql -u root < /app/database/town_guseo_bufs_holiday.sql
+mysql -u root < /app/database/town_bufs_namsan_holiday.sql
+mysql -u root < /app/database/town_namsan_bufs_holiday.sql
+sleep 2
 service mysql restart
 service tomcat start
 echo "--------------Finish---------------\n"

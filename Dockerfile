@@ -38,7 +38,8 @@ RUN wget https://downloads.mariadb.com/Connectors/java/connector-java-2.7.0/mari
 
 #mariadb settings
 COPY ./srcs/50-server.cnf /etc/mysql/mariadb.conf.d/
-COPY ./srcs/base.sql /app/
+RUN mkdir /app/database
+COPY ./srcs/database/* /app/database/
 
 #Language settings
 RUN apt-get install -y locales
