@@ -8,25 +8,25 @@ CREATE TABLE shuttle_bufs ( id INT PRIMARY KEY, arrive time);
 
 CREATE VIEW shuttle_domitory
 AS
-SELECT id, DATE_ADD(arrive, INTERVAL 3 MINUTE) AS "arrive"
+SELECT id, DATE_ADD(arrive, INTERVAL 4 MINUTE) AS "arrive"
 FROM shuttle_bufs;
 
 -- Add shuttle_beomeoa data with VIEW
 CREATE VIEW shuttle_beomeosa
 AS
-SELECT id, DATE_ADD(arrive, INTERVAL 7 MINUTE) AS "arrive"
+SELECT id, DATE_ADD(arrive, INTERVAL 9 MINUTE) AS "arrive"
 FROM shuttle_bufs;
 
 -- Add shuttle_namsan data with VIEW
 CREATE VIEW shuttle_namsan
 AS
-SELECT id, DATE_ADD(arrive, INTERVAL 9 MINUTE) AS "arrive"
+SELECT id, DATE_ADD(arrive, INTERVAL 11 MINUTE) AS "arrive"
 FROM shuttle_bufs;
 
 -- Add shuttle_fireStation data with VIEW
 CREATE VIEW shuttle_fire
 AS
-SELECT id, DATE_ADD(arrive, INTERVAL 13 MINUTE) AS "arrive"
+SELECT id, DATE_ADD(arrive, INTERVAL 15 MINUTE) AS "arrive"
 FROM shuttle_bufs;
 
 -- create town_bufs_namsan table
