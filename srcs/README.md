@@ -1,5 +1,4 @@
-# BUFS_ShuttleBus(학교가자) - 진행 중
-
+# BUFS_ShuttleBus(학교가자)
 **구현 사이트**
 - [http://bufsbus.kr/](http://bufsbus.kr/)   
    
