@@ -4,8 +4,9 @@ FROM ubuntu:20.04
 RUN mkdir /app
 RUN sed -i 's/archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
 RUN sed -i 's/ports.ubuntu.com/ftp.harukasan.org/g' /etc/apt/sources.list
-RUN apt-get update && apt-get upgrade -y && apt-get install -y mariadb-server vim wget cron
-RUN wget http://mirror.apache-kr.org/tomcat/tomcat-9/v9.0.38/bin/apache-tomcat-9.0.38.tar.gz
+RUN apt-get update -y && apt-get upgrade -y && apt-get install -y mariadb-server vim wget cron
+#RUN wget http://mirror.apache-kr.org/tomcat/tomcat-9/v9.0.38/bin/apache-tomcat-9.0.38.tar.gz
+RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.38/bin/apache-tomcat-9.0.38.tar.gz
 RUN tar xvzf apache-tomcat-9.0.38.tar.gz -C /app && rm -rf apache-tomcat-9.0.38.tar.gz
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 
@@ -29,7 +30,7 @@ ENV CATALINA_HOME /app/apache-tomcat-9.0.38
 #java
 RUN mkdir /usr/lib/jvm
 RUN mkdir /usr/lib/jvm/java-13-openjdk
-RUN apt-get install -y openjdk-13-jdk
+RUN apt install -y openjdk-13-jdk
 RUN mv -f /usr/lib/jvm/java-13-openjdk-*/* /usr/lib/jvm/java-13-openjdk
 RUN rm -rf /usr/lib/jvm/java-13-openjdk-*
 ENV JAVA_HOME /usr/lib/jvm/java-13-openjdk
