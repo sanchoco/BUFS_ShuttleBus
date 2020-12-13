@@ -32,6 +32,7 @@ public class City301Api {
         urlBuilder.append("&" + URLEncoder.encode("bstopid","UTF-8") + "=" + URLEncoder.encode("506480000", "UTF-8")); /*정류소 명*/
         URL url = new URL(urlBuilder.toString());
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+	conn.setReadTimeout(30000);
         conn.setRequestMethod("GET");
         conn.setRequestProperty("Accept", "application/xml");
         //System.out.println(urlBuilder.toString());
