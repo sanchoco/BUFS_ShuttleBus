@@ -11,7 +11,6 @@ RUN tar xvzf apache-tomcat-9.0.38.tar.gz -C /app && rm -rf apache-tomcat-9.0.38.
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 
 #tomcat settings
-COPY ./srcs/project.war /app/apache-tomcat-9.0.38/webapps/
 COPY ./srcs/server.xml /app/apache-tomcat-9.0.38/conf/
 COPY ./srcs/web.xml /app/apache-tomcat-9.0.38/conf/
 COPY ./srcs/context.xml /app/apache-tomcat-9.0.38/conf/
@@ -55,7 +54,7 @@ COPY ./srcs/HolidayApi.java /app/api/
 COPY ./srcs/api_sync.sh /app/api/
 RUN chmod 755 /app/api/api_sync.sh
 
-#crontab settings
+COPY ./srcs/project.war /app/apache-tomcat-9.0.38/webapps/
 
 #run
 COPY ./srcs/start.sh /
