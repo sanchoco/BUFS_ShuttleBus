@@ -24,7 +24,9 @@
 - 프론트엔드: HTML, JSP, Bootstrap
 - 백엔드: Java, MariaDB, ,REST API, Apache Tomcat
 
-
+### 구현 화면
+![bufs1](https://user-images.githubusercontent.com/58046372/104699552-4583c680-5756-11eb-9eb6-fdce8dc4be1a.png)
+![bufs2](https://user-images.githubusercontent.com/58046372/104699555-461c5d00-5756-11eb-9609-557d4316efe2.png)
 
 **프로젝트 소개 페이지**
 - https://www.notion.so/7481f4094a8e41a6ae36a550ebdf2bfb
