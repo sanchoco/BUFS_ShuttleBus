@@ -21,7 +21,7 @@
 
 ### 구현 환경 및 프로그램
 - 서버 및 환경:  Docker, Ubuntu, OpenJDK
-- 프론트엔드: HTML, JSP, Bootstrap
+- 프론트엔드: HTML, CSS, JSP, Bootstrap
 - 백엔드: Java, MariaDB, ,REST API, Apache Tomcat
 
 ### 구현 화면
