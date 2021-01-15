@@ -17,12 +17,14 @@
 
 ### 효과
 - 학기중 일일 1,000명 이용
-- 학우들의 긍정적인 피드백, 후기
+- 학우들의 긍정적인 피드백과 유용하다는 후기를 받음.
 
 ### 구현 환경 및 프로그램
 - 서버 및 환경:  Docker, Ubuntu, OpenJDK
 - 프론트엔드: HTML, JSP, Bootstrap
 - 백엔드: Java, MariaDB, Apache Tomcat
+
+
 
 **프로젝트 소개 페이지**
 - https://www.notion.so/7481f4094a8e41a6ae36a550ebdf2bfb
