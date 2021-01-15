@@ -1,7 +1,4 @@
 # 부산외대 학교가자
-
-**구현 사이트**
-- [http://bufsbus.kr/](http://bufsbus.kr/)   
    
 ### 사이트 주소: [http://bufsbus.kr/](http://bufsbus.kr/)
 
