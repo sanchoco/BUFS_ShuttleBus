@@ -36,16 +36,16 @@ ENV JAVA_HOME /usr/lib/jvm/java-13-openjdk
 ENV PATH $PATH:$JAVA_HOME/bin
 RUN wget https://downloads.mariadb.com/Connectors/java/connector-java-2.7.0/mariadb-java-client-2.7.0.jar -P /usr/lib/jvm/java-13-openjdk/lib/
 
-#mariadb settings
-COPY ./srcs/50-server.cnf /etc/mysql/mariadb.conf.d/
-RUN mkdir /app/database
-COPY ./srcs/database/* /app/database/
-
 #Language settings
 RUN apt-get install -y locales
 ENV LANGUAGE ko_KR.UTF-8
 ENV LANG ko_KR.UTF-8
 RUN locale-gen ko_KR ko_KR.UTF-8
+
+#mariadb settings
+COPY ./srcs/50-server.cnf /etc/mysql/mariadb.conf.d/
+RUN mkdir /app/database
+COPY ./srcs/database/* /app/database/
 
 #api connect setting
 RUN mkdir /app/api
