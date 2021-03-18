@@ -22,7 +22,7 @@ public class City301Api {
 public static void main(String[] args) throws IOException {
     //URL
     StringBuilder urlBuilder = new StringBuilder("http://61.43.246.153/openapi-data/service/busanBIMS2/stopArr"); /*URL*/
-    urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=" + "%2FxFc4AdSit3wq68y%2Fgc7Vqzqh0EnFrZbuTtUz%2FzOYCDgEDz3fhvIqRGsgO4Ygiuri0sd%2Bwq1bJktZ1lrBYCALg%3D%3D"); /*Service Key*/
+    urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=" + ""); /*Service Key*/
     urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지번호*/
     urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("5", "UTF-8")); /*한 페이지 결과 수*/
     urlBuilder.append("&" + URLEncoder.encode("bstopid","UTF-8") + "=" + URLEncoder.encode("506480000", "UTF-8")); /*정류소 명*/
@@ -56,8 +56,8 @@ public static void main(String[] args) throws IOException {
 
     con = DriverManager.getConnection(
         "jdbc:mariadb://127.0.0.1:3306/goSchool",
-        "apiUpdate",
-        "1234");
+        "",
+        "");
     pstmt = con.prepareStatement("update city_301 set min1 = NULL, min2 = NULL");
     pstmt.executeQuery(); //run query
 

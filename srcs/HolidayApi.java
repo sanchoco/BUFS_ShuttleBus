@@ -31,7 +31,7 @@ public static void main(String[] args) throws IOException {
 		StringBuilder urlBuilder = new StringBuilder(
 			"http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService/getRestDeInfo"); /* URL */
 		urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "="
-			+ "%2FxFc4AdSit3wq68y%2Fgc7Vqzqh0EnFrZbuTtUz%2FzOYCDgEDz3fhvIqRGsgO4Ygiuri0sd%2Bwq1bJktZ1lrBYCALg%3D%3D"); /*
+			+ ""); /*
 
 		urlBuilder.append(
 				"&" + URLEncoder.encode("solYear", "UTF-8") + "=" + URLEncoder.encode(year, "UTF-8")); /* 년도 */
@@ -65,7 +65,7 @@ public static void main(String[] args) throws IOException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		Class.forName("org.mariadb.jdbc.Driver");
-		con = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/goSchool", "apiUpdate", "1234");
+		con = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/goSchool", "", "");
 		pstmt = con.prepareStatement("update city_301 set min1 = NULL, min2 = NULL");
 		pstmt.executeQuery(); // run query
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
