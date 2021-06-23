@@ -29,9 +29,15 @@
 ![bufs1](https://user-images.githubusercontent.com/58046372/104699552-4583c680-5756-11eb-9eb6-fdce8dc4be1a.png)
 ![bufs2](https://user-images.githubusercontent.com/58046372/104699555-461c5d00-5756-11eb-9609-557d4316efe2.png)
 
+### 홍보
+<img width="816" alt="스크린샷 2021-06-24 오전 1 19 16" src="https://user-images.githubusercontent.com/58046372/123133003-47cb1900-d48a-11eb-94b9-8815aeb24099.png">
+
 **프로젝트 소개 페이지**
 - https://www.notion.so/7481f4094a8e41a6ae36a550ebdf2bfb
- 
+
+
+
+
 ### 어려웠던 점, 극복 방법
 - DB와 처음 연동해보는 프로젝트라 Java와 MySQL을 사용하려고 JDBC를 사용하였는데 잘 되지 않아 힘들었습니다. 구글링과 여러 시도 끝에 해결할 수 있었습니다.
 - 개발 환경과 라즈베리파이(arm)의 아키텍쳐가 달라 배포할 때 어려움이 있었습니다. 도커파일로 배포를 하여도 문제가 있었는데 자바와 같이 아키텍쳐별로 다른 프로그램을 설치해서 그랬었고 공통적으로 명령어를 통해 설치하도록 수정하여 해결하였습니다.
